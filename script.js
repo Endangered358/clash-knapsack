@@ -1,13 +1,13 @@
-document.getElementById("csvFile").addEventListener("change", function (e) {
-  const reader = new FileReader();
-  reader.onload = function () {
-    const lines = reader.result.split("\n").map(l => l.split(","));
-    let html = "<table>";
-    lines.forEach(row => {
-      html += "<tr>" + row.map(cell => `<td>${cell}</td>`).join("") + "</tr>";
-    });
-    html += "</table>";
-    document.getElementById("output").innerHTML = html;
-  };
-  reader.readAsText(e.target.files[0]);
-});
+function calculate() {
+  // Get values from inputs
+  const n1 = parseInt(document.getElementById("num1").value) || 0;
+  const n2 = parseInt(document.getElementById("num2").value) || 0;
+  const n3 = parseInt(document.getElementById("num3").value) || 0;
+  const n4 = parseInt(document.getElementById("num4").value) || 0;
+
+  // Example calculation: sum
+  const sum = n1 + n2 + n3 + n4;
+
+  // Output the result
+  document.getElementById("result").textContent = `Sum: ${sum}`;
+}

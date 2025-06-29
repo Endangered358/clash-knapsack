@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSV Viewer</title>
+  <title>Integer Calculator</title>
   <style>
     body { font-family: sans-serif; padding: 20px; }
-    table { border-collapse: collapse; }
-    td, th { border: 1px solid #ccc; padding: 5px; }
+    input[type="number"] { margin: 5px; width: 60px; }
+    button { margin: 10px; }
   </style>
 </head>
 <body>
-  <h1>CSV Viewer</h1>
-  <input type="file" id="csvFile" accept=".csv" />
-  <div id="output"></div>
+  <h1>Integer Calculator</h1>
+
+  <p>Enter integers below:</p>
+  <input type="number" id="num1" />
+  <input type="number" id="num2" />
+  <input type="number" id="num3" />
+  <input type="number" id="num4" />
+
+  <br />
+  <button onclick="calculate()">Calculate</button>
+
+  <h3>Result:</h3>
+  <div id="result"></div>
 
   <script src="script.js"></script>
 </body>
