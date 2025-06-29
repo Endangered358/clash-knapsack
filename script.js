@@ -109,7 +109,8 @@ function readAllInputs() {
     1: "Books of Building",
     2: "Books of Fighting",
     3: "Builder Potions",
-    4: "Research Potions"
+    4: "Research Potions",
+    5: "Resource Potions"
   }
   const cost = [heroesCost, buildingCost, fightingCost, builderPotionCost, researchPotionCost, resourcePotionCost]
   const values = [heroesVal, buildingVal, fightingVal, builderPotionVal, researchPotionVal, resourcePotionVal]
