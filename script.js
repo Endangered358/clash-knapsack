@@ -83,8 +83,8 @@ function readAllInputs() {
   const researchPotionCost = getInputArray("researchPotionCost");
   const researchPotionVal = getInputArray("researchPotionVal");
 
-  const resourcePotionCost = getInputArray("researchPotionCost");
-  const resourcePotionVal = getInputArray("researchPotionVal");
+  const resourcePotionCost = getInputArray("resourcePotionCost");
+  const resourcePotionVal = getInputArray("resourcePotionVal");
 
 
 
