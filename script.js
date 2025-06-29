@@ -125,10 +125,5 @@ function readAllInputs() {
   });
   output += `</ul>`;
 
-  console.log("=== CHOICE ARRAY ===");
-  for (let i = 1; i <= n; i++) {
-    console.log(`Category ${i}:`, choice[i].map((v, idx) => `w=${idx}->k=${v}`).filter((_, idx) => idx % 100 === 0 || idx === W));
-  }
-
   resultDiv.innerHTML = output;
 }
