@@ -82,6 +82,12 @@ function readAllInputs() {
   
   const researchPotionCost = getInputArray("researchPotionCost");
   const researchPotionVal = getInputArray("researchPotionVal");
+
+  const resourcePotionCost = getInputArray("researchPotionCost");
+  const resourcePotionVal = getInputArray("researchPotionVal");
+
+
+
   const totalMoneyInput = document.getElementById("totalMoney").value;
   const totalMoney = parseFloat(totalMoneyInput) || 0; // convert to number, default 0
 
@@ -105,17 +111,25 @@ function readAllInputs() {
     3: "Builder Potions",
     4: "Research Potions"
   }
-  const cost = [heroesCost, buildingCost, fightingCost, builderPotionCost, researchPotionCost]
-  const values = [heroesVal, buildingVal, fightingVal, builderPotionVal, researchPotionVal]
+  const cost = [heroesCost, buildingCost, fightingCost, builderPotionCost, researchPotionCost, resourcePotionCost]
+  const values = [heroesVal, buildingVal, fightingVal, builderPotionVal, researchPotionVal, resourcePotionVal]
   
   const result = maxValueWithBudget(cost, values, totalMoney);
   console.log("Max saved hours:", result.maxValue);
   console.log("Purchases per category:", result.purchasesPerCategory);
 
-  
+  let totalSpent = 0;
+
+  result.purchasesPerCategory.forEach((count, i) => {
+    // Sum up the first `count` costs from each category
+    totalSpent += cost[i].slice(0, count).reduce((a, b) => a + b, 0);
+  });
+
+
   const resultDiv = document.getElementById("result");
 
   let output = `<h2>Max Saved Hours: ${result.maxValue}</h2>`;
+  output += `<h3>Total Money Spent: ${totalSpent}</h3>`;
   output += `<h3>Purchases per category:</h3><ul>`;
 
   result.purchasesPerCategory.forEach((count, i) => {
